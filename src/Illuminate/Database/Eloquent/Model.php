@@ -1490,6 +1490,16 @@ abstract class Model implements Arrayable, ArrayAccess, CanBeEscapedWhenCastToSt
     }
 
     /**
+     * Force a hard delete on all models from the database.
+     *
+     * @return int
+     */
+    public static function forceDeleteAll()
+    {
+        return static::deleteAll();
+    }
+
+    /**
      * Force a hard destroy on a soft deleted model.
      *
      * This method protects developers from running forceDestroy when the trait is missing.
