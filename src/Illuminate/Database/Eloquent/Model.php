@@ -1442,6 +1442,16 @@ abstract class Model implements Arrayable, ArrayAccess, CanBeEscapedWhenCastToSt
     }
 
     /**
+     * Delete all models from the database.
+     *
+     * @return int
+     */
+    public function deleteAll()
+    {
+        return $this->newQuery()->delete();
+    }
+
+    /**
      * Delete the model from the database without raising any events.
      *
      * @return bool
